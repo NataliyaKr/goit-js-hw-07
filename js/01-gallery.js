@@ -28,6 +28,11 @@ const onContainerClick = (e) => {
 
     const instance = basicLightbox.create(`<img src="${source}" width="800" height="600">`);
     instance.show();
+    galleryEl.addEventListener("keydown", event => {
+        if (event.code === "Escape") {
+        instance.close();
+        }
+    });
 };
 
 galleryEl.addEventListener("click", onContainerClick);
